@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <title>Geekhub table</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+<h1>Spreadsheets</h1>
+
+<div id="changes">
+    <label for="fontColor">font color</label>
+    <select id="fontColor">
+        <option value="blue" style="color: blue;">blue</option>
+        <option value="green" style="color: green;">green</option>
+        <option value="yellow" style="color: yellow;">yellow</option>
+        <option value="red" style="color: red;">red</option>
+        <option value="pink" style="color: pink;">pink</option>
+        <option value="black" style="color: black;">black</option>
+        <option value="white" style="color: white; background: black;">white</option>
+    </select>
+    <label for="backgroudColor">background color</label>
+    <select id="backgroudColor">
+        <option value="blue" style="background: blue; color: blue;">blue</option>
+        <option value="green" style="background: green; color: green;">green</option>
+        <option value="yellow" style="background: yellow; color: yellow;">yellow</option>
+        <option value="red" style="background: red; color: red;">red</option>
+        <option value="pink" style="background: pink; color: pink;">pink</option>
+        <option value="black" style="background: black; color: black;">black</option>
+        <option value="white" style="background: white; color: white;">white</option>
+    </select>
+    <label for="fontResize">font size</label>
+    <select id="fontResize">
+        <option value="10" style="font-size: 10px">10</option>
+        <option value="12" style="font-size: 12px">12</option>
+        <option value="14" style="font-size: 14px">14</option>
+        <option value="16" style="font-size: 16px">16</option>
+        <option value="18" style="font-size: 18px">18</option>
+        <option value="24" style="font-size: 24px">24</option>
+    </select>
+    <input type="button" id="clean" onclick="clearStorage()" value="clean Table">
+</div>
+
+<form id="table"></form>
+
+<script src="./index.js"></script>
+</body>
+</html>
