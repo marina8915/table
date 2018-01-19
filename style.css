@@ -3,18 +3,32 @@ body {
     margin: auto;
 }
 
-ul{
+h1,
+#changes {
+    margin-left: 50px;
+    margin-bottom: 20px;
+}
+
+ul {
     margin: 0;
+    height: 39px;
 }
 
 ul#data {
-    padding: 0!important;
+    padding: 0 !important;
 }
 
-input{
+input {
     width: 20px;
+    height: 39px;
+    text-align: center;
 }
 
-#clean{
+input[readonly="true"] {
+    color: gray;
+}
+
+#clean {
     width: 100px;
+    height: auto;
 }

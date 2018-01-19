@@ -1,5 +1,4 @@
 var n = 0
-var idCol = document.getElementById('col' + i)
 for (var i = 100; i > -1; i--) {
     var col = document.createElement('ul')
     col.id = 'col' + i
@@ -19,7 +18,7 @@ for (var i = 100; i > -1; i--) {
             el.className = 'data'
             el.id = n
             var elStyle = 'style' + n
-            el.value =localStorage.getItem(n)
+            el.value = localStorage.getItem(n)
             el.style = localStorage.getItem(elStyle)
             el.setAttribute('onfocus', 'changes(' + n + ')')
             document.getElementById('col' + i).insertBefore(el, document.getElementById('col' + i).childNodes[0])
@@ -40,35 +39,31 @@ for (var i = 100; i > -1; i--) {
     }
 }
 
-    function changes(n) {
-        var elem = document.getElementById(n)
-        var elemStyle = 'style' + n
-        fontColor.onchange = function () {
-            elem.style.color = fontColor.value
-            localStorage.setItem(elemStyle, elem.getAttribute('style'))
-        }
-
-        backgroudColor.onchange = function () {
-            elem.style.background = backgroudColor.value
-            localStorage.setItem(elemStyle, elem.getAttribute('style'))
-        }
-
-        fontResize.onchange = function () {
-            elem.style.fontSize = fontResize.value + 'px'
-            localStorage.setItem(elemStyle, elem.getAttribute('style'))
-        }
-
-        //save changes
-        elem.onclick = elem.onblur = elem.onmouseleave = function () {
-            localStorage.setItem(n, elem.value)
-        }
-
-        elem.onkeypress = elem.onkeydown = function () {
-            this.size = ( this.value.length > 2 ) ? this.value.length : 2
-        }
+function changes(n) {
+    var elem = document.getElementById(n)
+    var elemStyle = 'style' + n
+    fontColor.onchange = function () {
+        elem.style.color = fontColor.value
+        localStorage.setItem(elemStyle, elem.getAttribute('style'))
     }
 
-    function clearStorage() {
-        localStorage.clear()
-        window.location.reload()
+    backgroudColor.onchange = function () {
+        elem.style.background = backgroudColor.value
+        localStorage.setItem(elemStyle, elem.getAttribute('style'))
     }
+
+    fontResize.onchange = function () {
+        elem.style.fontSize = fontResize.value + 'px'
+        localStorage.setItem(elemStyle, elem.getAttribute('style'))
+    }
+
+    //save changes
+    elem.onclick = elem.onblur = elem.onmouseleave = function () {
+        localStorage.setItem(n, elem.value)
+    }
+}
+
+function clearStorage() {
+    localStorage.clear()
+    window.location.reload()
+}
